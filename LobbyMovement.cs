@@ -37,7 +37,6 @@ public class LobbyMovement: MonoBehaviour
         LobbyLeftLeft = Resources.LoadAll<Texture>("Textures/Lobby/LobbyLeftLeft");
         lobbyMiddle = Resources.LoadAll<Texture>("Textures/Lobby/lobbyMiddle");
         lobbyRight = Resources.LoadAll<Texture>("Textures/Lobby/lobbyRight");
-        print("loading complete");
         startPos = player.transform.position;
         whicharray.Add(LobbyLeft);
         whicharray.Add(lobbyMiddle);
@@ -51,7 +50,7 @@ public class LobbyMovement: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //print(whicharray[horizontal][vertical]);
+       
         screen.GetComponent<Renderer>().material.SetTexture("_MainTex", whicharray[horizontal][vertical]);
         
         device = SteamVR_Controller.Input((int)controller.index);
@@ -60,8 +59,7 @@ public class LobbyMovement: MonoBehaviour
 
         if (device.GetTouch(SteamVR_Controller.ButtonMask.Touchpad))
         {
-           // print(whicharray[counter] + "check 1");
-            //print(touchpad.y);
+          
             touchpad = device.GetAxis(EVRButtonId.k_EButton_SteamVR_Touchpad);
             if (touchpad.x >= 0.5 || touchpad.x <= -0.5 || touchpad.y >= 0.5 || touchpad.y <= -0.5)
             {
