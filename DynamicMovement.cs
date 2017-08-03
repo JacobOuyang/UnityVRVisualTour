@@ -66,7 +66,7 @@ public class DynamicMovement : MonoBehaviour
                     counter -= 1;
                     print(textarray[counter] + "check 3");
                     screen.GetComponent<Renderer>().material.SetTexture("_MainTex", whicharray[counter]);
-                    //player.transform.position = startPos;
+                    
                 }
                 if (counter >= whicharray.Length - 2 & whicharray == textarray & touchpad.y >0)
                 {
@@ -88,7 +88,7 @@ public class DynamicMovement : MonoBehaviour
                 print(touchpad.x + "x");
                 player.transform.Rotate(0, touchpad.x * sensitivityX * 0.1f, 0);
             }
-            // print(playerPos + "test2");
+           
 
 
         }
